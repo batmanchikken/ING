@@ -25,4 +25,9 @@ public class Zebra implements Animal {
         eatText = "munch munch zank yee bra";
         System.out.println(eatText);
     }
+
+    @Override
+    public String getName() {
+        return name;
+    }
 }

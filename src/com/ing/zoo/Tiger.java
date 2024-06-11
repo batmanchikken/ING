@@ -40,4 +40,9 @@ public class Tiger implements Animal {
         }
         System.out.println(trick);
     }
+
+    @Override
+    public String getName() {
+        return name;
+    }
 }

@@ -46,4 +46,9 @@ public class Pig implements Animal {
         }
         System.out.println(trick);
     }
+
+    @Override
+    public String getName() {
+        return name;
+    }
 }

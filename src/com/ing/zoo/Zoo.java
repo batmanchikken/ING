@@ -37,10 +37,12 @@ public class Zoo {
         if(input.equals(commands[0]))
         {
             animals.forEach(Animal::sayHello);
-        }
-        else
-        {
-            System.out.println("Unknown command: " + input);
+        } else {
+            String newInput = input.replace(commands[0], "");
+            animals.stream()
+                    .filter(animal -> animal.getName().equals(newInput.trim()))
+                    .findFirst()
+                    .ifPresent(Animal::sayHello);
         }
     }
 }

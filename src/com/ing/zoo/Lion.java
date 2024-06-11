@@ -22,4 +22,9 @@ public class Lion implements Animal {
         eatText = "nomnomnom thx mate";
         System.out.println(eatText);
     }
+
+    @Override
+    public String getName() {
+        return name;
+    }
 }

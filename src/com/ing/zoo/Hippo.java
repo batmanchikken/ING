@@ -22,4 +22,9 @@ public class Hippo implements Animal {
         eatText = "munch munch lovely";
         System.out.println(eatText);
     }
+
+    @Override
+    public String getName() {
+        return name;
+    }
 }
