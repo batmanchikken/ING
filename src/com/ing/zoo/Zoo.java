@@ -5,7 +5,6 @@ import com.ing.zoo.Interfaces.Carnivore;
 import com.ing.zoo.Interfaces.Herbivore;
 import com.ing.zoo.Interfaces.Trickster;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
