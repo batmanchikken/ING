@@ -1,5 +1,13 @@
 package com.ing.zoo;
 
+import com.ing.zoo.Animals.*;
+import com.ing.zoo.Interfaces.Animal;
+import com.ing.zoo.Interfaces.Carnivore;
+import com.ing.zoo.Interfaces.Herbivore;
+import com.ing.zoo.Interfaces.Trickster;
+
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Zoo {
@@ -21,18 +29,41 @@ public class Zoo {
         wally.name = "wally";
         Zebra marty = new Zebra();
         marty.name = "marty";
+        Crocodile dilbert = new Crocodile();
+        dilbert.name = "dilbert";
+        Owl rexy = new Owl();
+        rexy.name = "rexy";
+
+        List<Animal> animals = Arrays.asList(henk, elsa, dora, wally, marty, dilbert, rexy);
+
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Voer uw command in: ");
 
         String input = scanner.nextLine();
-        if(input.equals(commands[0] + " henk"))
-        {
-            henk.sayHello();
+        if(input.equals(commands[0])) {
+            animals.forEach(Animal::sayHello);
+        } else if(input.contains(commands[0])){
+            String newInput = input.replace(commands[0], "");
+            animals.stream()
+                    .filter(animal -> animal.getName().equals(newInput.trim()))
+                    .findFirst()
+                    .ifPresent(Animal::sayHello);
         }
-        else
-        {
-            System.out.println("Unknown command: " + input);
+
+        if (input.equals(commands[1])){
+            animals.stream().filter(animal -> animal instanceof Herbivore)
+                    .forEach(animal -> ((Herbivore) animal).eatLeaves());
+        }
+
+        if (input.equals(commands[2])){
+            animals.stream().filter(animal -> animal instanceof Carnivore)
+                    .forEach(animal -> ((Carnivore) animal).eatMeat());
+        }
+
+        if (input.equals(commands[3])){
+            animals.stream().filter(animal -> animal instanceof Trickster)
+                    .forEach(animal -> ((Trickster) animal).performTrick());
         }
     }
 }

@@ -1,8 +1,12 @@
-package com.ing.zoo;
+package com.ing.zoo.Animals;
+
+import com.ing.zoo.Interfaces.Animal;
+import com.ing.zoo.Interfaces.Carnivore;
+import com.ing.zoo.Interfaces.Trickster;
 
 import java.util.Random;
 
-public class Tiger {
+public class Tiger implements Animal, Carnivore, Trickster {
     public String name;
     public String helloText;
     public String eatText;
@@ -37,5 +41,10 @@ public class Tiger {
             trick = "scratches ears";
         }
         System.out.println(trick);
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 }
