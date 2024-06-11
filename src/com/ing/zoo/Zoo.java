@@ -43,7 +43,7 @@ public class Zoo {
         String input = scanner.nextLine();
         if(input.equals(commands[0])) {
             animals.forEach(Animal::sayHello);
-        } else {
+        } else if(input.contains(commands[0])){
             String newInput = input.replace(commands[0], "");
             animals.stream()
                     .filter(animal -> animal.getName().equals(newInput.trim()))
