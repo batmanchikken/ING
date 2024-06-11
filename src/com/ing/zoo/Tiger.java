@@ -1,8 +1,10 @@
 package com.ing.zoo;
 
+import com.ing.zoo.Interfaces.Animal;
+
 import java.util.Random;
 
-public class Tiger {
+public class Tiger implements Animal {
     public String name;
     public String helloText;
     public String eatText;

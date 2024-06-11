@@ -1,6 +1,8 @@
 package com.ing.zoo;
 
-public class Lion {
+import com.ing.zoo.Interfaces.Animal;
+
+public class Lion implements Animal {
     public String name;
     public String helloText;
     public String eatText;
