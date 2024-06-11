@@ -1,5 +1,6 @@
 package com.ing.zoo;
 
+import com.ing.zoo.Animals.*;
 import com.ing.zoo.Interfaces.Animal;
 import com.ing.zoo.Interfaces.Carnivore;
 import com.ing.zoo.Interfaces.Herbivore;
@@ -28,8 +29,12 @@ public class Zoo {
         wally.name = "wally";
         Zebra marty = new Zebra();
         marty.name = "marty";
+        Crocodile dilbert = new Crocodile();
+        dilbert.name = "dilbert";
+        Owl rexy = new Owl();
+        rexy.name = "rexy";
 
-        List<Animal> animals = Arrays.asList(henk, elsa, dora, wally, marty);
+        List<Animal> animals = Arrays.asList(henk, elsa, dora, wally, marty, dilbert, rexy);
 
 
         Scanner scanner = new Scanner(System.in);

@@ -1,4 +1,4 @@
-package com.ing.zoo;
+package com.ing.zoo.Animals;
 
 import com.ing.zoo.Interfaces.Animal;
 import com.ing.zoo.Interfaces.Carnivore;
@@ -7,31 +7,25 @@ import com.ing.zoo.Interfaces.Trickster;
 
 import java.util.Random;
 
-public class Pig implements Animal, Herbivore, Carnivore, Trickster {
+public class Owl implements Animal, Carnivore, Trickster {
     public String name;
     public String helloText;
     public String eatText;
     public String trick;
 
-    public Pig()
+    public Owl()
     {
     }
 
     public void sayHello()
     {
-        helloText = "splash";
+        helloText = "OE OE";
         System.out.println(helloText);
-    }
-
-    public void eatLeaves()
-    {
-        eatText = "munch munch oink";
-        System.out.println(eatText);
     }
 
     public void eatMeat()
     {
-        eatText = "nomnomnom oink thx";
+        eatText = "munch munch, rats are so tasty!";
         System.out.println(eatText);
     }
 
@@ -41,11 +35,11 @@ public class Pig implements Animal, Herbivore, Carnivore, Trickster {
         int rnd = random.nextInt(2);
         if(rnd == 0)
         {
-            trick = "rolls in the mud";
+            trick = "turns their head around  180 degrees and back";
         }
         else
         {
-            trick = "runs in circles";
+            trick = "flies away in complete silence";
         }
         System.out.println(trick);
     }

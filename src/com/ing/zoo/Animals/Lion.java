@@ -1,31 +1,28 @@
-package com.ing.zoo;
+package com.ing.zoo.Animals;
 
 import com.ing.zoo.Interfaces.Animal;
-import com.ing.zoo.Interfaces.Herbivore;
+import com.ing.zoo.Interfaces.Carnivore;
 
-public class Zebra implements Animal, Herbivore {
+public class Lion implements Animal, Carnivore {
     public String name;
     public String helloText;
     public String eatText;
-    public String trick;
 
-    public Zebra()
+    public Lion()
     {
     }
 
     public void sayHello()
     {
-        helloText = "zebra zebra";
+        helloText = "roooaoaaaaar";
         System.out.println(helloText);
     }
 
-    public void eatLeaves()
+    public void eatMeat()
     {
-        eatText = "munch munch zank yee bra";
+        eatText = "nomnomnom thx mate";
         System.out.println(eatText);
     }
-
-    @Override
     public String getName() {
         return name;
     }

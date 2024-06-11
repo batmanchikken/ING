@@ -1,4 +1,4 @@
-package com.ing.zoo;
+package com.ing.zoo.Animals;
 
 import com.ing.zoo.Interfaces.Animal;
 import com.ing.zoo.Interfaces.Carnivore;
@@ -6,45 +6,47 @@ import com.ing.zoo.Interfaces.Trickster;
 
 import java.util.Random;
 
-public class Tiger implements Animal, Carnivore, Trickster {
+public class Crocodile implements Animal, Carnivore, Trickster {
+
     public String name;
     public String helloText;
     public String eatText;
     public String trick;
 
-    public Tiger()
+
+    public Crocodile()
     {
     }
 
-    public void sayHello()
-    {
-        helloText = "rraaarww";
+    @Override
+    public void sayHello() {
+        helloText = "crock crock hello";
         System.out.println(helloText);
-    }
-
-    public void eatMeat()
-    {
-        eatText = "nomnomnom oink wubalubadubdub";
-        System.out.println(eatText);
-    }
-
-    public void performTrick()
-    {
-        Random random = new Random();
-        int rnd = random.nextInt(2);
-        if(rnd == 0)
-        {
-            trick = "jumps in tree";
-        }
-        else
-        {
-            trick = "scratches ears";
-        }
-        System.out.println(trick);
     }
 
     @Override
     public String getName() {
         return name;
+    }
+
+    @Override
+    public void eatMeat() {
+        eatText = "mmmmmmmmhhh sooo tasty!";
+        System.out.println(eatText);
+    }
+
+    @Override
+    public void performTrick() {
+        Random random = new Random();
+        int rnd = random.nextInt(2);
+        if(rnd == 0)
+        {
+            trick = "opens it's mouth as wide as it can";
+        }
+        else
+        {
+            trick = "does a underwater twist";
+        }
+        System.out.println(trick);
     }
 }
