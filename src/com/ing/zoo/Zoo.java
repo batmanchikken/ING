@@ -1,6 +1,9 @@
 package com.ing.zoo;
 
 import com.ing.zoo.Interfaces.Animal;
+import com.ing.zoo.Interfaces.Carnivore;
+import com.ing.zoo.Interfaces.Herbivore;
+import com.ing.zoo.Interfaces.Trickster;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -34,8 +37,7 @@ public class Zoo {
         System.out.print("Voer uw command in: ");
 
         String input = scanner.nextLine();
-        if(input.equals(commands[0]))
-        {
+        if(input.equals(commands[0])) {
             animals.forEach(Animal::sayHello);
         } else {
             String newInput = input.replace(commands[0], "");
@@ -43,6 +45,21 @@ public class Zoo {
                     .filter(animal -> animal.getName().equals(newInput.trim()))
                     .findFirst()
                     .ifPresent(Animal::sayHello);
+        }
+
+        if (input.equals(commands[1])){
+            animals.stream().filter(animal -> animal instanceof Herbivore)
+                    .forEach(animal -> ((Herbivore) animal).eatLeaves());
+        }
+
+        if (input.equals(commands[2])){
+            animals.stream().filter(animal -> animal instanceof Carnivore)
+                    .forEach(animal -> ((Carnivore) animal).eatMeat());
+        }
+
+        if (input.equals(commands[3])){
+            animals.stream().filter(animal -> animal instanceof Trickster)
+                    .forEach(animal -> ((Trickster) animal).performTrick());
         }
     }
 }

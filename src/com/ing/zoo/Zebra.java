@@ -1,10 +1,11 @@
 package com.ing.zoo;
 
 import com.ing.zoo.Interfaces.Animal;
+import com.ing.zoo.Interfaces.Herbivore;
 
 import java.util.Random;
 
-public class Zebra implements Animal {
+public class Zebra implements Animal, Herbivore {
     public String name;
     public String helloText;
     public String eatText;

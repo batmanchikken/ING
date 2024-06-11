@@ -1,8 +1,9 @@
 package com.ing.zoo;
 
 import com.ing.zoo.Interfaces.Animal;
+import com.ing.zoo.Interfaces.Carnivore;
 
-public class Lion implements Animal {
+public class Lion implements Animal, Carnivore {
     public String name;
     public String helloText;
     public String eatText;
@@ -22,8 +23,6 @@ public class Lion implements Animal {
         eatText = "nomnomnom thx mate";
         System.out.println(eatText);
     }
-
-    @Override
     public String getName() {
         return name;
     }

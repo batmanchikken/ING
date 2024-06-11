@@ -1,10 +1,13 @@
 package com.ing.zoo;
 
 import com.ing.zoo.Interfaces.Animal;
+import com.ing.zoo.Interfaces.Carnivore;
+import com.ing.zoo.Interfaces.Herbivore;
+import com.ing.zoo.Interfaces.Trickster;
 
 import java.util.Random;
 
-public class Pig implements Animal {
+public class Pig implements Animal, Herbivore, Carnivore, Trickster {
     public String name;
     public String helloText;
     public String eatText;
